@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Ticketing Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .ticket {
+            margin: 10px 0;
+        }
+        .ticket button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Ticketing Center</h1>
+    <div id="ticket-list">
+        <div class="ticket">
+            <span>Concert Ticket - $5000</span>
+            <button onclick="buyTicket('Concert Ticket', 5000)">Buy</button>
+        </div>
+        <div class="ticket">
+            <span>Movie Ticket - $500</span>
+            <button onclick="buyTicket('Movie Ticket', 500)">Buy</button>
+        </div>
+        <div class="ticket">
+            <span>Sport Event Ticket - $300</span>
+            <button onclick="buyTicket('Sport Event Ticket', 300)">Buy</button>
+        </div>
+    </div>
+    <div id="message"></div>
+
+    <script>
+        function buyTicket(ticketName, price) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = `You have successfully purchased a ${ticketName} for $${price}!`;
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 3000);
+        }
+    </script>
+    
+</body>
+</html>
